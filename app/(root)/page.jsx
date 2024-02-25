@@ -1,9 +1,8 @@
 import TicketCard from "@/components/ticket-card";
-import TicketForm from "@/components/ticket-form";
 
 const getTickets = async () => {
   try {
-    const response = await fetch("http://localhost:3000/api/tickets", {
+    const response = await fetch("/api/tickets", {
       cache: "no-store",
     });
 
