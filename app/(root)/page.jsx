@@ -20,7 +20,7 @@ export default async function Home() {
   ];
 
   return (
-    <main className="p-4 flex flex-col gap-4">
+    <main className="p-4 flex flex-col gap-6">
       {tickets &&
         uniqueCategories?.map((uniqueCategory, categoryIndex) => (
           <div key={categoryIndex}>
