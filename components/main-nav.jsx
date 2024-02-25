@@ -17,7 +17,7 @@ const MainNav = () => {
         </MenubarMenu>
       </Menubar>
       <div className="flex items-center gap-2">
-        <Link href={"https://basic-issue-ticketing.vercel.app/"}>
+        <Link href={"https://basic-issue-ticketing.vercel.app/ticket/new"}>
           <Plus className="w-6 h-6" />
         </Link>
         <ThemeToggle />
