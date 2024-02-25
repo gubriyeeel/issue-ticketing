@@ -12,7 +12,7 @@ const DeleteTicket = ({ className, ticketId }) => {
 
   const deleteTicket = async () => {
     const response = await fetch(
-      `http://localhost:3000/api/tickets/${ticketId}`,
+      `https://basic-issue-ticketing.vercel.app/api/tickets/${ticketId}`,
       {
         method: "DELETE",
       }

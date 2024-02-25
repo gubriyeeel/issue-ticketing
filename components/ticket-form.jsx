@@ -58,13 +58,16 @@ const TicketForm = ({ ticket }) => {
     e.preventDefault();
 
     if (editMode) {
-      const response = await fetch(`/api/tickets/${ticket._id}`, {
-        method: "PUT",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `https://basic-issue-ticketing.vercel.app/api/tickets/${ticket._id}`,
+        {
+          method: "PUT",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error("[TICKET] FAILED TO UPDATE TICKET");
@@ -74,13 +77,16 @@ const TicketForm = ({ ticket }) => {
       router.refresh();
       router.push("/");
     } else {
-      const response = await fetch("/api/tickets", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://basic-issue-ticketing.vercel.app/api/tickets",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error("[TICKET] FAILED CREATING TICKET");
