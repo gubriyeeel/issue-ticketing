@@ -1,7 +1,9 @@
+import Link from "next/link";
+import { ExternalLink } from "lucide-react";
+
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -9,9 +11,6 @@ import {
 import DeleteTicket from "@/components/delete-ticket";
 import PriorityIcons from "@/components/priority-icons";
 import Status from "@/components/status";
-
-import Link from "next/link";
-import { ExternalLink } from "lucide-react";
 
 const TicketCard = ({ ticket }) => {
   const formatTimeStamp = (timestamp) => {
@@ -33,10 +32,7 @@ const TicketCard = ({ ticket }) => {
   return (
     <Card>
       <CardHeader className="pb-4">
-        <Link
-          href={`https://basic-issue-ticketing.vercel.app/ticket/${ticket._id}`}
-          style={{ display: "contents" }}
-        >
+        <Link href={`/ticket/${ticket._id}`} style={{ display: "contents" }}>
           <CardTitle className="flex flex-row gap-2 items-center text-md font-light hover:underline">
             <span>{ticket.title}</span>
             <ExternalLink className="w-4 h-4" />{" "}
