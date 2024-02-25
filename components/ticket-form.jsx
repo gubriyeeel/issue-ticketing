@@ -102,7 +102,7 @@ const TicketForm = ({ ticket }) => {
     <Card className="w-full sm:max-w-96">
       <CardHeader>
         <CardTitle className="text-xl">
-          {editModE ? "Update" : "Create"}
+          {editMode ? "Update" : "Create"}
         </CardTitle>
         <CardDescription className="font-light">
           {editMode ? "Update your ticket" : "Create a new ticket"}

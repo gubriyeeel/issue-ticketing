@@ -1,9 +1,7 @@
-import Link from "next/link";
-import { ExternalLink } from "lucide-react";
-
 import {
   Card,
   CardContent,
+  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -11,6 +9,9 @@ import {
 import DeleteTicket from "@/components/delete-ticket";
 import PriorityIcons from "@/components/priority-icons";
 import Status from "@/components/status";
+
+import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 
 const TicketCard = ({ ticket }) => {
   const formatTimeStamp = (timestamp) => {
