@@ -2,9 +2,12 @@ import TicketCard from "@/components/ticket-card";
 
 const getTickets = async () => {
   try {
-    const response = await fetch("http://basic-issue-ticketing.vercel.app/api/tickets", {
-      cache: "no-store",
-    });
+    const response = await fetch(
+      "http://basic-issue-ticketing.vercel.app/api/tickets",
+      {
+        cache: "no-store",
+      }
+    );
 
     return await response.json();
   } catch (error) {
@@ -26,8 +29,6 @@ export default async function Home() {
           <div key={categoryIndex}>
             <h2 className="text-xl capitalize mb-4">{uniqueCategory}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-
-
               {tickets
                 .filter((ticket) => ticket.category === uniqueCategory)
                 .map((ticket) => (
