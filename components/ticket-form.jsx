@@ -71,8 +71,8 @@ const TicketForm = ({ ticket }) => {
       }
 
       toast.success("Ticket updated!");
-      router.refresh();
       router.push("/");
+      router.refresh();
     } else {
       const response = await fetch("/api/tickets", {
         method: "POST",

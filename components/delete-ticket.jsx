@@ -21,6 +21,7 @@ const DeleteTicket = ({ className, ticketId }) => {
     if (response.ok) {
       toast.success("Ticket deleted!");
       router.refresh();
+      router.push("/");
     }
   };
 
@@ -28,7 +29,7 @@ const DeleteTicket = ({ className, ticketId }) => {
     <Trash
       onClick={deleteTicket}
       className={cn(
-        "w-4 h-4 cursor-pointer hover:text-red-300 text-red-400 dark:text-red-600 dark:hover:text-red-400",
+        "w-4 h-4 cursor-pointer text-red-600 hover:text-red-600/70",
         className
       )}
     />

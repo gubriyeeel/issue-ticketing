@@ -3,7 +3,7 @@ import TicketCard from "@/components/ticket-card";
 const getTickets = async () => {
   try {
     const response = await fetch(
-      "http://basic-issue-ticketing.vercel.app/api/tickets",
+      "http://localhost:3000/api/tickets",
       {
         cache: "no-store",
       }

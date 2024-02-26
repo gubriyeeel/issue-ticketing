@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 
 import {
@@ -11,6 +10,7 @@ import {
 import DeleteTicket from "@/components/delete-ticket";
 import PriorityIcons from "@/components/priority-icons";
 import Status from "@/components/status";
+import UpdateTicket from "@/components/update-ticket";
 
 const TicketCard = ({ ticket }) => {
   const formatTimeStamp = (timestamp) => {
@@ -32,12 +32,10 @@ const TicketCard = ({ ticket }) => {
   return (
     <Card>
       <CardHeader className="pb-4">
-        <Link href={`/ticket/${ticket._id}`} style={{ display: "contents" }}>
           <CardTitle className="flex flex-row gap-2 items-center text-md font-light hover:underline">
             <span>{ticket.title}</span>
             <ExternalLink className="w-4 h-4" />{" "}
           </CardTitle>
-        </Link>
         <div>
           <PriorityIcons priority={ticket.priority} />
         </div>
@@ -55,6 +53,7 @@ const TicketCard = ({ ticket }) => {
           <Status status={ticket.status} />
 
           <div className="flex-grow flex justify-end gap-4">
+            <UpdateTicket ticketId={ticket._id} />
             <DeleteTicket ticketId={ticket._id} />
           </div>
         </div>
